@@ -1,0 +1,20 @@
+[flake8]
+max-line-length = 100
+exclude =
+    .git,
+    __pycache__,
+    deploy,
+    FrontEnd,
+    DataBase,
+    docs,
+    .venv,
+    venv,
+    .pytest_cache
+# E203: conflicto con black/PEP8 sobre espacios antes de ":"
+# W503: line break before binary operator (PEP8 lo permite ahora)
+# E241: multiple spaces after ',' (permite alineacion visual en tablas/seeds)
+# E221: multiple spaces before operator (permite columnas alineadas)
+# F401: __init__.py re-exporta routers a proposito
+ignore = E203,W503,E241,E221
+per-file-ignores =
+    Backend/routers/__init__.py:F401

@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Sabor & Mesa — Estilos específicos por módulo
+   ========================================================================== */
+
+/* ----- Reportes / dashboard ---------------------------------------------- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.kpi {
+  background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+  border: 1px solid var(--color-borde);
+  border-left: 4px solid var(--color-primario);
+  border-radius: var(--radio);
+  padding: 16px;
+  box-shadow: var(--sombra);
+}
+
+.kpi-etiqueta {
+  font-size: 12px;
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kpi-valor {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-primario-oscuro);
+  margin-top: 4px;
+}
+
+.kpi-detalle {
+  font-size: 12px;
+  color: var(--color-texto-suave);
+  margin-top: 4px;
+}
+
+.bloque-reporte {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: var(--sombra);
+}
+
+.bloque-reporte h3 {
+  margin-top: 0;
+  border-bottom: 2px solid var(--color-primario-suave);
+  padding-bottom: 6px;
+}
+
+.barra-progreso {
+  height: 14px;
+  background: var(--color-primario-suave);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+/* El ancho se controla con la custom property --pct (asignada desde JS),
+   así evitamos style="..." inline y respetamos CSP. */
+.barra-progreso-relleno {
+  height: 100%;
+  width: var(--pct, 0%);
+  background: linear-gradient(90deg, var(--color-primario), var(--color-primario-oscuro));
+  transition: width 250ms ease;
+}
+
+/* Fila de un bloque de reporte (etiqueta + barra) */
+.fila-reporte {
+  margin-bottom: 10px;
+}
+
+.fila-reporte-cabecera {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+/* ----- Menú digital ------------------------------------------------------ */
+.menu-tarjeta {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--sombra);
+  transition: transform var(--transicion);
+}
+
+.menu-tarjeta:hover { transform: translateY(-2px); }
+
+.menu-tarjeta-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-tarjeta-titulo strong { font-size: 16px; }
+
+.menu-categoria {
+  font-size: 12px;
+  color: var(--color-primario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-precio {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primario-oscuro);
+}
+
+.menu-acciones {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* ----- Pedidos ----------------------------------------------------------- */
+.pedido-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.pedido-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 14px;
+}
+
+.pedido-items li:last-child { border-bottom: none; }
+
+.pedido-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-primario-oscuro);
+  margin-top: 10px;
+}
+
+.selector-plato {
+  display: grid;
+  grid-template-columns: 1fr 80px auto;
+  gap: 8px;
+  align-items: end;
+}
+
+/* ----- Factura ----------------------------------------------------------- */
+.factura {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 20px;
+  box-shadow: var(--sombra);
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.factura-cabecera {
+  text-align: center;
+  border-bottom: 2px dashed var(--color-borde);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.factura-cabecera h3 { color: var(--color-primario-oscuro); margin: 0; }
+
+.factura-tabla {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.factura-tabla td { padding: 4px 0; }
+.factura-tabla .alineado-derecha { text-align: right; }
+
+.factura-totales {
+  border-top: 1px dashed var(--color-borde);
+  margin-top: 12px;
+  padding-top: 12px;
+  font-size: 14px;
+}
+
+.factura-totales .total-final {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-primario-oscuro);
+  border-top: 1px solid var(--color-borde);
+  padding-top: 6px;
+  margin-top: 6px;
+}
